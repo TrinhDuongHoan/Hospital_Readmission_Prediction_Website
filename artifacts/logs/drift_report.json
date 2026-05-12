@@ -1,0 +1,108 @@
+{
+  "numeric_drift": {
+    "admission_type_id": {
+      "train_mean": 2.024,
+      "online_mean": 1.6,
+      "abs_diff": 0.424
+    },
+    "discharge_disposition_id": {
+      "train_mean": 3.7156,
+      "online_mean": 2.2,
+      "abs_diff": 1.5156
+    },
+    "admission_source_id": {
+      "train_mean": 5.7544,
+      "online_mean": 3.2,
+      "abs_diff": 2.5544
+    },
+    "time_in_hospital": {
+      "train_mean": 4.396,
+      "online_mean": 5.8,
+      "abs_diff": 1.404
+    },
+    "num_lab_procedures": {
+      "train_mean": 43.0956,
+      "online_mean": 31.6,
+      "abs_diff": 11.4956
+    },
+    "num_procedures": {
+      "train_mean": 1.3397,
+      "online_mean": 0.6,
+      "abs_diff": 0.7397
+    },
+    "num_medications": {
+      "train_mean": 16.0218,
+      "online_mean": 15.0,
+      "abs_diff": 1.0218
+    },
+    "number_outpatient": {
+      "train_mean": 0.3694,
+      "online_mean": 0.2,
+      "abs_diff": 0.1694
+    },
+    "number_emergency": {
+      "train_mean": 0.1978,
+      "online_mean": 0.0,
+      "abs_diff": 0.1978
+    },
+    "number_inpatient": {
+      "train_mean": 0.6356,
+      "online_mean": 0.6,
+      "abs_diff": 0.0356
+    },
+    "number_diagnoses": {
+      "train_mean": 7.4226,
+      "online_mean": 6.8,
+      "abs_diff": 0.6226
+    }
+  },
+  "categorical_drift": {
+    "race": {
+      "train_top": "Caucasian",
+      "online_top": "Caucasian",
+      "changed": false
+    },
+    "gender": {
+      "train_top": "Female",
+      "online_top": "Female",
+      "changed": false
+    },
+    "age": {
+      "train_top": "[70-80)",
+      "online_top": "[60-70)",
+      "changed": true
+    },
+    "medical_specialty": {
+      "train_top": "missing",
+      "online_top": "missing",
+      "changed": false
+    },
+    "diag_1": {
+      "train_top": "428",
+      "online_top": "250.8",
+      "changed": true
+    },
+    "diag_2": {
+      "train_top": "276",
+      "online_top": "277",
+      "changed": true
+    },
+    "diag_3": {
+      "train_top": "250",
+      "online_top": "117",
+      "changed": true
+    },
+    "change": {
+      "train_top": "No",
+      "online_top": "missing",
+      "changed": true
+    },
+    "diabetesMed": {
+      "train_top": "Yes",
+      "online_top": "missing",
+      "changed": true
+    }
+  },
+  "train_rows": 101766,
+  "online_rows": 5
+}

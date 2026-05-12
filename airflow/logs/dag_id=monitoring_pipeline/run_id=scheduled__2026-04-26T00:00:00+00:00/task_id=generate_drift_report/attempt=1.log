@@ -1,0 +1,528 @@
+[2026-04-27T11:37:59.475+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:37:59.497+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:37:59.502+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:37:59.502+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:37:59.510+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): generate_drift_report> on 2026-04-26 00:00:00+00:00
+[2026-04-27T11:37:59.516+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=255) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:37:59.515+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'generate_drift_report', 'scheduled__2026-04-26T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_pipeline_dag.py', '--cfg-path', '/tmp/tmp9erb3110']
+[2026-04-27T11:37:59.517+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask generate_drift_report
+[2026-04-27T11:37:59.517+0000] {standard_task_runner.py:63} INFO - Started process 256 to run task
+[2026-04-27T11:37:59.549+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [running]> on host 4ee61ed472da
+[2026-04-27T11:37:59.607+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='generate_drift_report' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-26T00:00:00+00:00'
+[2026-04-27T11:37:59.607+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:37:59.617+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:37:59.618+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.monitoring.drift_report']
+[2026-04-27T11:37:59.624+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:38:00.408+0000] {subprocess.py:93} INFO - /opt/***/project/src/monitoring/drift_report.py:89: DtypeWarning: Columns (10) have mixed types. Specify dtype option on import or set low_memory=False.
+[2026-04-27T11:38:00.408+0000] {subprocess.py:93} INFO -   train_df = pd.read_csv(train_path)
+[2026-04-27T11:38:00.579+0000] {subprocess.py:93} INFO - 2026-04-27 11:38:00 | INFO | monitoring.drift_report | Saved drift report to artifacts/logs/drift_report.json
+[2026-04-27T11:38:00.586+0000] {subprocess.py:93} INFO - {
+[2026-04-27T11:38:00.586+0000] {subprocess.py:93} INFO -   "numeric_drift": {
+[2026-04-27T11:38:00.586+0000] {subprocess.py:93} INFO -     "admission_type_id": {
+[2026-04-27T11:38:00.586+0000] {subprocess.py:93} INFO -       "train_mean": 2.024,
+[2026-04-27T11:38:00.586+0000] {subprocess.py:93} INFO -       "online_mean": 1.6,
+[2026-04-27T11:38:00.586+0000] {subprocess.py:93} INFO -       "abs_diff": 0.424
+[2026-04-27T11:38:00.586+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -     "discharge_disposition_id": {
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -       "train_mean": 3.7156,
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -       "online_mean": 2.2,
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -       "abs_diff": 1.5156
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -     "admission_source_id": {
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -       "train_mean": 5.7544,
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -       "online_mean": 3.2,
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -       "abs_diff": 2.5544
+[2026-04-27T11:38:00.587+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -     "time_in_hospital": {
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -       "train_mean": 4.396,
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -       "online_mean": 5.8,
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -       "abs_diff": 1.404
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -     "num_lab_procedures": {
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -       "train_mean": 43.0956,
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -       "online_mean": 31.6,
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -       "abs_diff": 11.4956
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -     "num_procedures": {
+[2026-04-27T11:38:00.588+0000] {subprocess.py:93} INFO -       "train_mean": 1.3397,
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -       "online_mean": 0.6,
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -       "abs_diff": 0.7397
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -     "num_medications": {
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -       "train_mean": 16.0218,
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -       "online_mean": 15.0,
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -       "abs_diff": 1.0218
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -     "number_outpatient": {
+[2026-04-27T11:38:00.589+0000] {subprocess.py:93} INFO -       "train_mean": 0.3694,
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -       "online_mean": 0.2,
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -       "abs_diff": 0.1694
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -     "number_emergency": {
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -       "train_mean": 0.1978,
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -       "online_mean": 0.0,
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -       "abs_diff": 0.1978
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -     "number_inpatient": {
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -       "train_mean": 0.6356,
+[2026-04-27T11:38:00.590+0000] {subprocess.py:93} INFO -       "online_mean": 0.6,
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -       "abs_diff": 0.0356
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -     "number_diagnoses": {
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -       "train_mean": 7.4226,
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -       "online_mean": 6.8,
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -       "abs_diff": 0.6226
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -     }
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -   },
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -   "categorical_drift": {
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -     "race": {
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -       "train_top": "Caucasian",
+[2026-04-27T11:38:00.591+0000] {subprocess.py:93} INFO -       "online_top": "Caucasian",
+[2026-04-27T11:38:00.592+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:38:00.592+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.592+0000] {subprocess.py:93} INFO -     "gender": {
+[2026-04-27T11:38:00.592+0000] {subprocess.py:93} INFO -       "train_top": "Female",
+[2026-04-27T11:38:00.592+0000] {subprocess.py:93} INFO -       "online_top": "Female",
+[2026-04-27T11:38:00.592+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:38:00.592+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.592+0000] {subprocess.py:93} INFO -     "age": {
+[2026-04-27T11:38:00.592+0000] {subprocess.py:93} INFO -       "train_top": "[70-80)",
+[2026-04-27T11:38:00.593+0000] {subprocess.py:93} INFO -       "online_top": "[60-70)",
+[2026-04-27T11:38:00.593+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:38:00.593+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.593+0000] {subprocess.py:93} INFO -     "medical_specialty": {
+[2026-04-27T11:38:00.593+0000] {subprocess.py:93} INFO -       "train_top": "missing",
+[2026-04-27T11:38:00.593+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:38:00.593+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:38:00.593+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -     "diag_1": {
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -       "train_top": "428",
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -       "online_top": "250.8",
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -     "diag_2": {
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -       "train_top": "276",
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -       "online_top": "277",
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.594+0000] {subprocess.py:93} INFO -     "diag_3": {
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -       "train_top": "250",
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -       "online_top": "117",
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -     "change": {
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -       "train_top": "No",
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -     "diabetesMed": {
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -       "train_top": "Yes",
+[2026-04-27T11:38:00.595+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:38:00.596+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:38:00.596+0000] {subprocess.py:93} INFO -     }
+[2026-04-27T11:38:00.596+0000] {subprocess.py:93} INFO -   },
+[2026-04-27T11:38:00.596+0000] {subprocess.py:93} INFO -   "train_rows": 101766,
+[2026-04-27T11:38:00.596+0000] {subprocess.py:93} INFO -   "online_rows": 5
+[2026-04-27T11:38:00.596+0000] {subprocess.py:93} INFO - }
+[2026-04-27T11:38:00.633+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-27T11:38:00.634+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:38:00.655+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_pipeline, task_id=generate_drift_report, run_id=scheduled__2026-04-26T00:00:00+00:00, execution_date=20260426T000000, start_date=20260427T113759, end_date=20260427T113800
+[2026-04-27T11:38:00.673+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:38:00.687+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:38:00.688+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-04-27T11:51:22.466+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:51:22.489+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:51:22.495+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:51:22.495+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:51:22.504+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): generate_drift_report> on 2026-04-26 00:00:00+00:00
+[2026-04-27T11:51:22.511+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=488) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:51:22.510+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'generate_drift_report', 'scheduled__2026-04-26T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_pipeline_dag.py', '--cfg-path', '/tmp/tmp88cbwsk5']
+[2026-04-27T11:51:22.512+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask generate_drift_report
+[2026-04-27T11:51:22.512+0000] {standard_task_runner.py:63} INFO - Started process 489 to run task
+[2026-04-27T11:51:22.549+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [running]> on host 80036929c971
+[2026-04-27T11:51:22.611+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='generate_drift_report' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-26T00:00:00+00:00'
+[2026-04-27T11:51:22.612+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:51:22.621+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:51:22.622+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.monitoring.drift_report']
+[2026-04-27T11:51:22.628+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:51:23.325+0000] {subprocess.py:93} INFO - /opt/***/project/src/monitoring/drift_report.py:89: DtypeWarning: Columns (10) have mixed types. Specify dtype option on import or set low_memory=False.
+[2026-04-27T11:51:23.325+0000] {subprocess.py:93} INFO -   train_df = pd.read_csv(train_path)
+[2026-04-27T11:51:23.490+0000] {subprocess.py:93} INFO - 2026-04-27 11:51:23 | INFO | monitoring.drift_report | Saved drift report to artifacts/logs/drift_report.json
+[2026-04-27T11:51:23.496+0000] {subprocess.py:93} INFO - {
+[2026-04-27T11:51:23.497+0000] {subprocess.py:93} INFO -   "numeric_drift": {
+[2026-04-27T11:51:23.497+0000] {subprocess.py:93} INFO -     "admission_type_id": {
+[2026-04-27T11:51:23.497+0000] {subprocess.py:93} INFO -       "train_mean": 2.024,
+[2026-04-27T11:51:23.497+0000] {subprocess.py:93} INFO -       "online_mean": 1.6,
+[2026-04-27T11:51:23.497+0000] {subprocess.py:93} INFO -       "abs_diff": 0.424
+[2026-04-27T11:51:23.497+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.497+0000] {subprocess.py:93} INFO -     "discharge_disposition_id": {
+[2026-04-27T11:51:23.497+0000] {subprocess.py:93} INFO -       "train_mean": 3.7156,
+[2026-04-27T11:51:23.497+0000] {subprocess.py:93} INFO -       "online_mean": 2.2,
+[2026-04-27T11:51:23.498+0000] {subprocess.py:93} INFO -       "abs_diff": 1.5156
+[2026-04-27T11:51:23.498+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.498+0000] {subprocess.py:93} INFO -     "admission_source_id": {
+[2026-04-27T11:51:23.498+0000] {subprocess.py:93} INFO -       "train_mean": 5.7544,
+[2026-04-27T11:51:23.498+0000] {subprocess.py:93} INFO -       "online_mean": 3.2,
+[2026-04-27T11:51:23.498+0000] {subprocess.py:93} INFO -       "abs_diff": 2.5544
+[2026-04-27T11:51:23.498+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.498+0000] {subprocess.py:93} INFO -     "time_in_hospital": {
+[2026-04-27T11:51:23.498+0000] {subprocess.py:93} INFO -       "train_mean": 4.396,
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -       "online_mean": 5.8,
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -       "abs_diff": 1.404
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -     "num_lab_procedures": {
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -       "train_mean": 43.0956,
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -       "online_mean": 31.6,
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -       "abs_diff": 11.4956
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -     "num_procedures": {
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -       "train_mean": 1.3397,
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -       "online_mean": 0.6,
+[2026-04-27T11:51:23.499+0000] {subprocess.py:93} INFO -       "abs_diff": 0.7397
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -     "num_medications": {
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -       "train_mean": 16.0218,
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -       "online_mean": 15.0,
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -       "abs_diff": 1.0218
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -     "number_outpatient": {
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -       "train_mean": 0.3694,
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -       "online_mean": 0.2,
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -       "abs_diff": 0.1694
+[2026-04-27T11:51:23.500+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -     "number_emergency": {
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -       "train_mean": 0.1978,
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -       "online_mean": 0.0,
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -       "abs_diff": 0.1978
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -     "number_inpatient": {
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -       "train_mean": 0.6356,
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -       "online_mean": 0.6,
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -       "abs_diff": 0.0356
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -     "number_diagnoses": {
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -       "train_mean": 7.4226,
+[2026-04-27T11:51:23.501+0000] {subprocess.py:93} INFO -       "online_mean": 6.8,
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -       "abs_diff": 0.6226
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -     }
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -   },
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -   "categorical_drift": {
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -     "race": {
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -       "train_top": "Caucasian",
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -       "online_top": "Caucasian",
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -     "gender": {
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -       "train_top": "Female",
+[2026-04-27T11:51:23.502+0000] {subprocess.py:93} INFO -       "online_top": "Female",
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -     "age": {
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -       "train_top": "[70-80)",
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -       "online_top": "[60-70)",
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -     "medical_specialty": {
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -       "train_top": "missing",
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:51:23.503+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -     "diag_1": {
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -       "train_top": "428",
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -       "online_top": "250.8",
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -     "diag_2": {
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -       "train_top": "276",
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -       "online_top": "277",
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -     "diag_3": {
+[2026-04-27T11:51:23.504+0000] {subprocess.py:93} INFO -       "train_top": "250",
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -       "online_top": "117",
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -     "change": {
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -       "train_top": "No",
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -     "diabetesMed": {
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -       "train_top": "Yes",
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:51:23.505+0000] {subprocess.py:93} INFO -     }
+[2026-04-27T11:51:23.506+0000] {subprocess.py:93} INFO -   },
+[2026-04-27T11:51:23.506+0000] {subprocess.py:93} INFO -   "train_rows": 101766,
+[2026-04-27T11:51:23.506+0000] {subprocess.py:93} INFO -   "online_rows": 5
+[2026-04-27T11:51:23.506+0000] {subprocess.py:93} INFO - }
+[2026-04-27T11:51:23.539+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-27T11:51:23.540+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:51:23.558+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_pipeline, task_id=generate_drift_report, run_id=scheduled__2026-04-26T00:00:00+00:00, execution_date=20260426T000000, start_date=20260427T115122, end_date=20260427T115123
+[2026-04-27T11:51:23.580+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:51:23.594+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:51:23.596+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-04-27T11:55:05.992+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:55:06.014+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:55:06.020+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:55:06.020+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:55:06.029+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): generate_drift_report> on 2026-04-26 00:00:00+00:00
+[2026-04-27T11:55:06.034+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'generate_drift_report', 'scheduled__2026-04-26T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_pipeline_dag.py', '--cfg-path', '/tmp/tmpxjbz_ag5']
+[2026-04-27T11:55:06.036+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask generate_drift_report
+[2026-04-27T11:55:06.037+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=298) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:55:06.037+0000] {standard_task_runner.py:63} INFO - Started process 299 to run task
+[2026-04-27T11:55:06.072+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [running]> on host 34bdc0b29c9b
+[2026-04-27T11:55:06.131+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='generate_drift_report' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-26T00:00:00+00:00'
+[2026-04-27T11:55:06.132+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:55:06.141+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:55:06.141+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.monitoring.drift_report']
+[2026-04-27T11:55:06.147+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:55:06.835+0000] {subprocess.py:93} INFO - /opt/***/project/src/monitoring/drift_report.py:89: DtypeWarning: Columns (10) have mixed types. Specify dtype option on import or set low_memory=False.
+[2026-04-27T11:55:06.835+0000] {subprocess.py:93} INFO -   train_df = pd.read_csv(train_path)
+[2026-04-27T11:55:07.000+0000] {subprocess.py:93} INFO - 2026-04-27 11:55:07 | INFO | monitoring.drift_report | Saved drift report to artifacts/logs/drift_report.json
+[2026-04-27T11:55:07.007+0000] {subprocess.py:93} INFO - {
+[2026-04-27T11:55:07.007+0000] {subprocess.py:93} INFO -   "numeric_drift": {
+[2026-04-27T11:55:07.007+0000] {subprocess.py:93} INFO -     "admission_type_id": {
+[2026-04-27T11:55:07.007+0000] {subprocess.py:93} INFO -       "train_mean": 2.024,
+[2026-04-27T11:55:07.007+0000] {subprocess.py:93} INFO -       "online_mean": 1.6,
+[2026-04-27T11:55:07.007+0000] {subprocess.py:93} INFO -       "abs_diff": 0.424
+[2026-04-27T11:55:07.007+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.007+0000] {subprocess.py:93} INFO -     "discharge_disposition_id": {
+[2026-04-27T11:55:07.007+0000] {subprocess.py:93} INFO -       "train_mean": 3.7156,
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -       "online_mean": 2.2,
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -       "abs_diff": 1.5156
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -     "admission_source_id": {
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -       "train_mean": 5.7544,
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -       "online_mean": 3.2,
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -       "abs_diff": 2.5544
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -     "time_in_hospital": {
+[2026-04-27T11:55:07.008+0000] {subprocess.py:93} INFO -       "train_mean": 4.396,
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -       "online_mean": 5.8,
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -       "abs_diff": 1.404
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -     "num_lab_procedures": {
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -       "train_mean": 43.0956,
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -       "online_mean": 31.6,
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -       "abs_diff": 11.4956
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -     "num_procedures": {
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -       "train_mean": 1.3397,
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -       "online_mean": 0.6,
+[2026-04-27T11:55:07.009+0000] {subprocess.py:93} INFO -       "abs_diff": 0.7397
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -     "num_medications": {
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -       "train_mean": 16.0218,
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -       "online_mean": 15.0,
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -       "abs_diff": 1.0218
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -     "number_outpatient": {
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -       "train_mean": 0.3694,
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -       "online_mean": 0.2,
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -       "abs_diff": 0.1694
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.010+0000] {subprocess.py:93} INFO -     "number_emergency": {
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -       "train_mean": 0.1978,
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -       "online_mean": 0.0,
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -       "abs_diff": 0.1978
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -     "number_inpatient": {
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -       "train_mean": 0.6356,
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -       "online_mean": 0.6,
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -       "abs_diff": 0.0356
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.011+0000] {subprocess.py:93} INFO -     "number_diagnoses": {
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -       "train_mean": 7.4226,
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -       "online_mean": 6.8,
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -       "abs_diff": 0.6226
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -     }
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -   },
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -   "categorical_drift": {
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -     "race": {
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -       "train_top": "Caucasian",
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -       "online_top": "Caucasian",
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:55:07.012+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -     "gender": {
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -       "train_top": "Female",
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -       "online_top": "Female",
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -     "age": {
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -       "train_top": "[70-80)",
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -       "online_top": "[60-70)",
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -     "medical_specialty": {
+[2026-04-27T11:55:07.013+0000] {subprocess.py:93} INFO -       "train_top": "missing",
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -     "diag_1": {
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -       "train_top": "428",
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -       "online_top": "250.8",
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -     "diag_2": {
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -       "train_top": "276",
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -       "online_top": "277",
+[2026-04-27T11:55:07.014+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -     "diag_3": {
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -       "train_top": "250",
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -       "online_top": "117",
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -     "change": {
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -       "train_top": "No",
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:55:07.015+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:55:07.016+0000] {subprocess.py:93} INFO -     "diabetesMed": {
+[2026-04-27T11:55:07.016+0000] {subprocess.py:93} INFO -       "train_top": "Yes",
+[2026-04-27T11:55:07.016+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:55:07.016+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:55:07.016+0000] {subprocess.py:93} INFO -     }
+[2026-04-27T11:55:07.016+0000] {subprocess.py:93} INFO -   },
+[2026-04-27T11:55:07.016+0000] {subprocess.py:93} INFO -   "train_rows": 101766,
+[2026-04-27T11:55:07.016+0000] {subprocess.py:93} INFO -   "online_rows": 5
+[2026-04-27T11:55:07.016+0000] {subprocess.py:93} INFO - }
+[2026-04-27T11:55:07.054+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-27T11:55:07.054+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:55:07.076+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_pipeline, task_id=generate_drift_report, run_id=scheduled__2026-04-26T00:00:00+00:00, execution_date=20260426T000000, start_date=20260427T115506, end_date=20260427T115507
+[2026-04-27T11:55:07.111+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:55:07.123+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:55:07.125+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-04-27T11:57:59.321+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:57:59.345+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:57:59.350+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:57:59.350+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:57:59.359+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): generate_drift_report> on 2026-04-26 00:00:00+00:00
+[2026-04-27T11:57:59.364+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'generate_drift_report', 'scheduled__2026-04-26T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_pipeline_dag.py', '--cfg-path', '/tmp/tmp7qb6v49c']
+[2026-04-27T11:57:59.366+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask generate_drift_report
+[2026-04-27T11:57:59.366+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=244) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:57:59.366+0000] {standard_task_runner.py:63} INFO - Started process 245 to run task
+[2026-04-27T11:57:59.401+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.generate_drift_report scheduled__2026-04-26T00:00:00+00:00 [running]> on host 0d500256bece
+[2026-04-27T11:57:59.460+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='generate_drift_report' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-26T00:00:00+00:00'
+[2026-04-27T11:57:59.461+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:57:59.472+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:57:59.472+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.monitoring.drift_report']
+[2026-04-27T11:57:59.478+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:58:00.188+0000] {subprocess.py:93} INFO - /opt/***/project/src/monitoring/drift_report.py:89: DtypeWarning: Columns (10) have mixed types. Specify dtype option on import or set low_memory=False.
+[2026-04-27T11:58:00.188+0000] {subprocess.py:93} INFO -   train_df = pd.read_csv(train_path)
+[2026-04-27T11:58:00.343+0000] {subprocess.py:93} INFO - 2026-04-27 11:58:00 | INFO | monitoring.drift_report | Saved drift report to artifacts/logs/drift_report.json
+[2026-04-27T11:58:00.350+0000] {subprocess.py:93} INFO - {
+[2026-04-27T11:58:00.350+0000] {subprocess.py:93} INFO -   "numeric_drift": {
+[2026-04-27T11:58:00.350+0000] {subprocess.py:93} INFO -     "admission_type_id": {
+[2026-04-27T11:58:00.350+0000] {subprocess.py:93} INFO -       "train_mean": 2.024,
+[2026-04-27T11:58:00.350+0000] {subprocess.py:93} INFO -       "online_mean": 1.6,
+[2026-04-27T11:58:00.350+0000] {subprocess.py:93} INFO -       "abs_diff": 0.424
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -     "discharge_disposition_id": {
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -       "train_mean": 3.7156,
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -       "online_mean": 2.2,
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -       "abs_diff": 1.5156
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -     "admission_source_id": {
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -       "train_mean": 5.7544,
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -       "online_mean": 3.2,
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -       "abs_diff": 2.5544
+[2026-04-27T11:58:00.351+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -     "time_in_hospital": {
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -       "train_mean": 4.396,
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -       "online_mean": 5.8,
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -       "abs_diff": 1.404
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -     "num_lab_procedures": {
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -       "train_mean": 43.0956,
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -       "online_mean": 31.6,
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -       "abs_diff": 11.4956
+[2026-04-27T11:58:00.352+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -     "num_procedures": {
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -       "train_mean": 1.3397,
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -       "online_mean": 0.6,
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -       "abs_diff": 0.7397
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -     "num_medications": {
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -       "train_mean": 16.0218,
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -       "online_mean": 15.0,
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -       "abs_diff": 1.0218
+[2026-04-27T11:58:00.353+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -     "number_outpatient": {
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -       "train_mean": 0.3694,
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -       "online_mean": 0.2,
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -       "abs_diff": 0.1694
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -     "number_emergency": {
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -       "train_mean": 0.1978,
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -       "online_mean": 0.0,
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -       "abs_diff": 0.1978
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -     "number_inpatient": {
+[2026-04-27T11:58:00.354+0000] {subprocess.py:93} INFO -       "train_mean": 0.6356,
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -       "online_mean": 0.6,
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -       "abs_diff": 0.0356
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -     "number_diagnoses": {
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -       "train_mean": 7.4226,
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -       "online_mean": 6.8,
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -       "abs_diff": 0.6226
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -     }
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -   },
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -   "categorical_drift": {
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -     "race": {
+[2026-04-27T11:58:00.355+0000] {subprocess.py:93} INFO -       "train_top": "Caucasian",
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -       "online_top": "Caucasian",
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -     "gender": {
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -       "train_top": "Female",
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -       "online_top": "Female",
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -     "age": {
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -       "train_top": "[70-80)",
+[2026-04-27T11:58:00.356+0000] {subprocess.py:93} INFO -       "online_top": "[60-70)",
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -     "medical_specialty": {
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -       "train_top": "missing",
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -       "changed": false
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -     "diag_1": {
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -       "train_top": "428",
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -       "online_top": "250.8",
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.357+0000] {subprocess.py:93} INFO -     "diag_2": {
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -       "train_top": "276",
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -       "online_top": "277",
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -     "diag_3": {
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -       "train_top": "250",
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -       "online_top": "117",
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -     "change": {
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -       "train_top": "No",
+[2026-04-27T11:58:00.358+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -     },
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -     "diabetesMed": {
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -       "train_top": "Yes",
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -       "online_top": "missing",
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -       "changed": true
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -     }
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -   },
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -   "train_rows": 101766,
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO -   "online_rows": 5
+[2026-04-27T11:58:00.359+0000] {subprocess.py:93} INFO - }
+[2026-04-27T11:58:00.392+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-27T11:58:00.392+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:58:00.411+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_pipeline, task_id=generate_drift_report, run_id=scheduled__2026-04-26T00:00:00+00:00, execution_date=20260426T000000, start_date=20260427T115759, end_date=20260427T115800
+[2026-04-27T11:58:00.443+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:58:00.454+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:58:00.457+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,1 @@
+python -m src.orchestration.pipelines.streaming_pipeline

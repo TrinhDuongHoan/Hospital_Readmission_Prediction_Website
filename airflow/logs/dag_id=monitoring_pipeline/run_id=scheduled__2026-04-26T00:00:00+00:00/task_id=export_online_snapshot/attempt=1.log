@@ -1,0 +1,92 @@
+[2026-04-27T11:37:58.342+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:37:58.366+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:37:58.371+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:37:58.371+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:37:58.382+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): export_online_snapshot> on 2026-04-26 00:00:00+00:00
+[2026-04-27T11:37:58.389+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=232) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:37:58.387+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'export_online_snapshot', 'scheduled__2026-04-26T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_pipeline_dag.py', '--cfg-path', '/tmp/tmpkfvu4jd1']
+[2026-04-27T11:37:58.389+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask export_online_snapshot
+[2026-04-27T11:37:58.389+0000] {standard_task_runner.py:63} INFO - Started process 233 to run task
+[2026-04-27T11:37:58.427+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [running]> on host 4ee61ed472da
+[2026-04-27T11:37:58.489+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='export_online_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-26T00:00:00+00:00'
+[2026-04-27T11:37:58.490+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:37:58.500+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:37:58.501+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.monitoring.export_online_features_snapshot']
+[2026-04-27T11:37:58.508+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:37:59.049+0000] {subprocess.py:93} INFO - 2026-04-27 11:37:59 | INFO | monitoring.export_online_snapshot | Exported online feature snapshot to artifacts/logs/latest_online_features.csv
+[2026-04-27T11:37:59.049+0000] {subprocess.py:93} INFO - Saved snapshot to artifacts/logs/latest_online_features.csv
+[2026-04-27T11:37:59.090+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-27T11:37:59.091+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:37:59.110+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_pipeline, task_id=export_online_snapshot, run_id=scheduled__2026-04-26T00:00:00+00:00, execution_date=20260426T000000, start_date=20260427T113758, end_date=20260427T113759
+[2026-04-27T11:37:59.134+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:37:59.152+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:37:59.154+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-04-27T11:51:21.405+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:51:21.430+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:51:21.435+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:51:21.436+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:51:21.446+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): export_online_snapshot> on 2026-04-26 00:00:00+00:00
+[2026-04-27T11:51:21.453+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=465) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:51:21.451+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'export_online_snapshot', 'scheduled__2026-04-26T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_pipeline_dag.py', '--cfg-path', '/tmp/tmp42__heyn']
+[2026-04-27T11:51:21.453+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask export_online_snapshot
+[2026-04-27T11:51:21.453+0000] {standard_task_runner.py:63} INFO - Started process 466 to run task
+[2026-04-27T11:51:21.492+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [running]> on host 80036929c971
+[2026-04-27T11:51:21.550+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='export_online_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-26T00:00:00+00:00'
+[2026-04-27T11:51:21.550+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:51:21.559+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:51:21.560+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.monitoring.export_online_features_snapshot']
+[2026-04-27T11:51:21.566+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:51:22.089+0000] {subprocess.py:93} INFO - 2026-04-27 11:51:22 | INFO | monitoring.export_online_snapshot | Exported online feature snapshot to artifacts/logs/latest_online_features.csv
+[2026-04-27T11:51:22.089+0000] {subprocess.py:93} INFO - Saved snapshot to artifacts/logs/latest_online_features.csv
+[2026-04-27T11:51:22.128+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-27T11:51:22.129+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:51:22.147+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_pipeline, task_id=export_online_snapshot, run_id=scheduled__2026-04-26T00:00:00+00:00, execution_date=20260426T000000, start_date=20260427T115121, end_date=20260427T115122
+[2026-04-27T11:51:22.158+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:51:22.174+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:51:22.175+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-04-27T11:55:04.891+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:55:04.914+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:55:04.919+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:55:04.920+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:55:04.929+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): export_online_snapshot> on 2026-04-26 00:00:00+00:00
+[2026-04-27T11:55:04.936+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=233) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:55:04.937+0000] {standard_task_runner.py:63} INFO - Started process 234 to run task
+[2026-04-27T11:55:04.934+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'export_online_snapshot', 'scheduled__2026-04-26T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_pipeline_dag.py', '--cfg-path', '/tmp/tmpigdap7tv']
+[2026-04-27T11:55:04.937+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask export_online_snapshot
+[2026-04-27T11:55:04.977+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [running]> on host 34bdc0b29c9b
+[2026-04-27T11:55:05.038+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='export_online_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-26T00:00:00+00:00'
+[2026-04-27T11:55:05.038+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:55:05.048+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:55:05.049+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.monitoring.export_online_features_snapshot']
+[2026-04-27T11:55:05.055+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:55:05.610+0000] {subprocess.py:93} INFO - 2026-04-27 11:55:05 | INFO | monitoring.export_online_snapshot | Exported online feature snapshot to artifacts/logs/latest_online_features.csv
+[2026-04-27T11:55:05.610+0000] {subprocess.py:93} INFO - Saved snapshot to artifacts/logs/latest_online_features.csv
+[2026-04-27T11:55:05.649+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-27T11:55:05.649+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:55:05.670+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_pipeline, task_id=export_online_snapshot, run_id=scheduled__2026-04-26T00:00:00+00:00, execution_date=20260426T000000, start_date=20260427T115504, end_date=20260427T115505
+[2026-04-27T11:55:05.688+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:55:05.704+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:55:05.705+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-04-27T11:57:57.095+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:57:57.117+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:57:57.122+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [queued]>
+[2026-04-27T11:57:57.122+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:57:57.130+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): export_online_snapshot> on 2026-04-26 00:00:00+00:00
+[2026-04-27T11:57:57.136+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'export_online_snapshot', 'scheduled__2026-04-26T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_pipeline_dag.py', '--cfg-path', '/tmp/tmp0a6ko7sa']
+[2026-04-27T11:57:57.137+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=221) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:57:57.138+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask export_online_snapshot
+[2026-04-27T11:57:57.138+0000] {standard_task_runner.py:63} INFO - Started process 222 to run task
+[2026-04-27T11:57:57.175+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.export_online_snapshot scheduled__2026-04-26T00:00:00+00:00 [running]> on host 0d500256bece
+[2026-04-27T11:57:57.239+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='export_online_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-04-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-26T00:00:00+00:00'
+[2026-04-27T11:57:57.239+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:57:57.263+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:57:57.264+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.monitoring.export_online_features_snapshot']
+[2026-04-27T11:57:57.271+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:57:58.413+0000] {subprocess.py:93} INFO - 2026-04-27 11:57:58 | INFO | monitoring.export_online_snapshot | Exported online feature snapshot to artifacts/logs/latest_online_features.csv
+[2026-04-27T11:57:58.413+0000] {subprocess.py:93} INFO - Saved snapshot to artifacts/logs/latest_online_features.csv
+[2026-04-27T11:57:58.461+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-27T11:57:58.461+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:57:58.483+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=monitoring_pipeline, task_id=export_online_snapshot, run_id=scheduled__2026-04-26T00:00:00+00:00, execution_date=20260426T000000, start_date=20260427T115757, end_date=20260427T115758
+[2026-04-27T11:57:58.533+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:57:58.548+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:57:58.549+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

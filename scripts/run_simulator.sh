@@ -1,0 +1,1 @@
+python -m src.event_stream.simulator.run_simulator

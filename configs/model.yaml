@@ -1,0 +1,3 @@
+model_path: artifacts/models/logistic_baseline.joblib
+high_threshold: 0.7
+medium_threshold: 0.4

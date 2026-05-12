@@ -1,0 +1,3 @@
+bootstrap_servers: 127.0.0.1:9092
+input_topic: hospital-events
+prediction_topic: hospital-predictions

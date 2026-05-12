@@ -1,0 +1,47 @@
+[2026-04-25T19:00:49.055+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-25T19:00:49.079+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot manual__2026-04-25T19:00:48.084417+00:00 [queued]>
+[2026-04-25T19:00:49.085+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.export_online_snapshot manual__2026-04-25T19:00:48.084417+00:00 [queued]>
+[2026-04-25T19:00:49.085+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-25T19:00:49.095+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): export_online_snapshot> on 2026-04-25 19:00:48.084417+00:00
+[2026-04-25T19:00:49.101+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'export_online_snapshot', 'manual__2026-04-25T19:00:48.084417+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/monitoring_pipeline_dag.py', '--cfg-path', '/tmp/tmpakgo_tpz']
+[2026-04-25T19:00:49.103+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=273) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-25T19:00:49.103+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask export_online_snapshot
+[2026-04-25T19:00:49.103+0000] {standard_task_runner.py:63} INFO - Started process 274 to run task
+[2026-04-25T19:00:49.145+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.export_online_snapshot manual__2026-04-25T19:00:48.084417+00:00 [running]> on host 731343c33fcb
+[2026-04-25T19:00:49.210+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='export_online_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-04-25T19:00:48.084417+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-25T19:00:48.084417+00:00'
+[2026-04-25T19:00:49.210+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-25T19:00:49.221+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-25T19:00:49.221+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.monitoring.export_online_features_snapshot']
+[2026-04-25T19:00:49.228+0000] {subprocess.py:86} INFO - Output:
+[2026-04-25T19:00:49.784+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-04-25T19:00:49.784+0000] {subprocess.py:93} INFO -   File "<frozen runpy>", line 198, in _run_module_as_main
+[2026-04-25T19:00:49.784+0000] {subprocess.py:93} INFO -   File "<frozen runpy>", line 88, in _run_code
+[2026-04-25T19:00:49.784+0000] {subprocess.py:93} INFO -   File "/opt/***/project/src/monitoring/export_online_features_snapshot.py", line 35, in <module>
+[2026-04-25T19:00:49.784+0000] {subprocess.py:93} INFO -     main()
+[2026-04-25T19:00:49.784+0000] {subprocess.py:93} INFO -   File "/opt/***/project/src/monitoring/export_online_features_snapshot.py", line 30, in main
+[2026-04-25T19:00:49.785+0000] {subprocess.py:93} INFO -     output_path = export_online_snapshot()
+[2026-04-25T19:00:49.785+0000] {subprocess.py:93} INFO -                   ^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-04-25T19:00:49.785+0000] {subprocess.py:93} INFO -   File "/opt/***/project/src/monitoring/export_online_features_snapshot.py", line 16, in export_online_snapshot
+[2026-04-25T19:00:49.785+0000] {subprocess.py:93} INFO -     raise FileNotFoundError(f"Online feature store file not found: {source_path}")
+[2026-04-25T19:00:49.785+0000] {subprocess.py:93} INFO - FileNotFoundError: Online feature store file not found: artifacts/logs/online_feature_store.json
+[2026-04-25T19:00:49.835+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-04-25T19:00:49.836+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-25T19:00:49.844+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-04-25T19:00:49.847+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=monitoring_pipeline, task_id=export_online_snapshot, run_id=manual__2026-04-25T19:00:48.084417+00:00, execution_date=20260425T190048, start_date=20260425T190049, end_date=20260425T190049
+[2026-04-25T19:00:49.856+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task export_online_snapshot (Bash command failed. The command returned a non-zero exit code 1.; 274)
+[2026-04-25T19:00:49.883+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-04-25T19:00:49.900+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-25T19:00:49.903+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

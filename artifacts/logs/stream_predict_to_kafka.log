@@ -1,0 +1,25 @@
+2026-04-25 16:42:48 | INFO | stream_predict_to_kafka | Starting stream prediction to Kafka
+2026-04-25 16:42:57 | INFO | stream_predict_to_kafka | Processing prediction batch_id=0
+2026-04-25 16:43:03 | INFO | stream_predict_to_kafka | Empty batch. Skip.
+2026-04-25 16:43:19 | INFO | stream_predict_to_kafka | Processing prediction batch_id=1
+2026-04-25 16:43:26 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 110939484, 'patient_nbr': 19274094, 'readmission_probability': 0.354521, 'risk_level': 'low'}
+2026-04-25 16:43:27 | INFO | stream_predict_to_kafka | Processing prediction batch_id=2
+2026-04-25 16:43:31 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 110939484, 'patient_nbr': 19274094, 'readmission_probability': 0.489512, 'risk_level': 'medium'}
+2026-04-25 16:43:31 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 170328306, 'patient_nbr': 65634327, 'readmission_probability': 0.516464, 'risk_level': 'medium'}
+2026-04-25 16:43:31 | INFO | stream_predict_to_kafka | Processing prediction batch_id=3
+2026-04-25 16:43:35 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 245688426, 'patient_nbr': 100657359, 'readmission_probability': 0.66408, 'risk_level': 'medium'}
+2026-04-25 16:43:35 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 110939484, 'patient_nbr': 19274094, 'readmission_probability': 0.489512, 'risk_level': 'medium'}
+2026-04-25 16:43:35 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 150826224, 'patient_nbr': 83144448, 'readmission_probability': 0.65806, 'risk_level': 'medium'}
+2026-04-25 16:43:35 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 170328306, 'patient_nbr': 65634327, 'readmission_probability': 0.516464, 'risk_level': 'medium'}
+2026-04-25 16:43:35 | INFO | stream_predict_to_kafka | Processing prediction batch_id=4
+2026-04-25 16:43:40 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 245688426, 'patient_nbr': 100657359, 'readmission_probability': 0.66408, 'risk_level': 'medium'}
+2026-04-25 16:43:40 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 135993852, 'patient_nbr': 65234214, 'readmission_probability': 0.560198, 'risk_level': 'medium'}
+2026-04-25 16:43:40 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 110939484, 'patient_nbr': 19274094, 'readmission_probability': 0.489512, 'risk_level': 'medium'}
+2026-04-25 16:43:40 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 150826224, 'patient_nbr': 83144448, 'readmission_probability': 0.835564, 'risk_level': 'high'}
+2026-04-25 16:43:40 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 170328306, 'patient_nbr': 65634327, 'readmission_probability': 0.516464, 'risk_level': 'medium'}
+2026-04-25 16:43:40 | INFO | stream_predict_to_kafka | Processing prediction batch_id=5
+2026-04-25 16:43:45 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 245688426, 'patient_nbr': 100657359, 'readmission_probability': 0.66408, 'risk_level': 'medium'}
+2026-04-25 16:43:45 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 135993852, 'patient_nbr': 65234214, 'readmission_probability': 0.558809, 'risk_level': 'medium'}
+2026-04-25 16:43:45 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 110939484, 'patient_nbr': 19274094, 'readmission_probability': 0.489512, 'risk_level': 'medium'}
+2026-04-25 16:43:45 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 150826224, 'patient_nbr': 83144448, 'readmission_probability': 0.835564, 'risk_level': 'high'}
+2026-04-25 16:43:45 | INFO | stream_predict_to_kafka | Published prediction: {'encounter_id': 170328306, 'patient_nbr': 65634327, 'readmission_probability': 0.516464, 'risk_level': 'medium'}

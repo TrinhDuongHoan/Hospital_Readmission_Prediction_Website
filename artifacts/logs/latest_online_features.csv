@@ -1,0 +1,6 @@
+encounter_id,patient_nbr,race,gender,age,admission_type_id,discharge_disposition_id,admission_source_id,time_in_hospital,medical_specialty,num_lab_procedures,num_procedures,num_medications,number_outpatient,number_emergency,number_inpatient,diag_1,diag_2,diag_3,number_diagnoses,change,diabetesMed
+245688426,100657359,Caucasian,Female,[60-70),3,6,1,4,missing,21,3,23,1,0,2,715,733,724,7,missing,missing
+135993852,65234214,AfricanAmerican,Female,[60-70),1,2,7,1,missing,21,0,6,0,0,0,403,584,428,7,missing,missing
+110939484,19274094,Caucasian,Female,[70-80),1,1,6,11,InternalMedicine,68,0,20,0,0,0,250.8,599,263,5,missing,missing
+150826224,83144448,Caucasian,Male,[30-40),2,1,1,12,Gastroenterology,28,0,19,0,0,1,494,277,117,7,missing,missing
+170328306,65634327,Caucasian,Male,[50-60),1,1,1,1,missing,20,0,7,0,0,0,780,427,E941,8,missing,missing

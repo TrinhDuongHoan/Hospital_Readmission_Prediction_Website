@@ -1,0 +1,50 @@
+[2026-04-27T11:41:28.340+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:41:28.364+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: training_pipeline.train_model manual__2026-04-27T11:41:24.723830+00:00 [queued]>
+[2026-04-27T11:41:28.369+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: training_pipeline.train_model manual__2026-04-27T11:41:24.723830+00:00 [queued]>
+[2026-04-27T11:41:28.370+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:41:28.379+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_model> on 2026-04-27 11:41:24.723830+00:00
+[2026-04-27T11:41:28.385+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'training_pipeline', 'train_model', 'manual__2026-04-27T11:41:24.723830+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/training_pipeline_dag.py', '--cfg-path', '/tmp/tmpsez1ezds']
+[2026-04-27T11:41:28.386+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=603) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:41:28.386+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask train_model
+[2026-04-27T11:41:28.386+0000] {standard_task_runner.py:63} INFO - Started process 604 to run task
+[2026-04-27T11:41:28.422+0000] {task_command.py:426} INFO - Running <TaskInstance: training_pipeline.train_model manual__2026-04-27T11:41:24.723830+00:00 [running]> on host 4ee61ed472da
+[2026-04-27T11:41:28.490+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='training_pipeline' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2026-04-27T11:41:24.723830+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-27T11:41:24.723830+00:00'
+[2026-04-27T11:41:28.491+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:41:28.501+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:41:28.502+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.training.train']
+[2026-04-27T11:41:28.508+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:41:30.130+0000] {subprocess.py:93} INFO - /opt/***/project/src/training/preprocess.py:33: DtypeWarning: Columns (10) have mixed types. Specify dtype option on import or set low_memory=False.
+[2026-04-27T11:41:30.131+0000] {subprocess.py:93} INFO -   df = pd.read_csv(file_path, na_values=MISSING_VALUES)
+[2026-04-27T11:41:32.764+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-04-27T11:41:32.765+0000] {subprocess.py:93} INFO -   File "<frozen runpy>", line 198, in _run_module_as_main
+[2026-04-27T11:41:32.765+0000] {subprocess.py:93} INFO -   File "<frozen runpy>", line 88, in _run_code
+[2026-04-27T11:41:32.765+0000] {subprocess.py:93} INFO -   File "/opt/***/project/src/training/train.py", line 76, in <module>
+[2026-04-27T11:41:32.766+0000] {subprocess.py:93} INFO -     model_pipeline, X_test, y_test = train_model()
+[2026-04-27T11:41:32.766+0000] {subprocess.py:93} INFO -                                      ^^^^^^^^^^^^^
+[2026-04-27T11:41:32.766+0000] {subprocess.py:93} INFO -   File "/opt/***/project/src/training/train.py", line 68, in train_model
+[2026-04-27T11:41:32.767+0000] {subprocess.py:93} INFO -     joblib.dump(pipeline, MODEL_OUTPUT_PATH)
+[2026-04-27T11:41:32.767+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 599, in dump
+[2026-04-27T11:41:32.767+0000] {subprocess.py:93} INFO -     with open(filename, "wb") as f:
+[2026-04-27T11:41:32.767+0000] {subprocess.py:93} INFO -          ^^^^^^^^^^^^^^^^^^^^
+[2026-04-27T11:41:32.767+0000] {subprocess.py:93} INFO - PermissionError: [Errno 13] Permission denied: 'artifacts/models/logistic_baseline.joblib'
+[2026-04-27T11:41:32.908+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-04-27T11:41:32.908+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:41:32.917+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-04-27T11:41:32.920+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=training_pipeline, task_id=train_model, run_id=manual__2026-04-27T11:41:24.723830+00:00, execution_date=20260427T114124, start_date=20260427T114128, end_date=20260427T114132
+[2026-04-27T11:41:32.930+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 13 for task train_model (Bash command failed. The command returned a non-zero exit code 1.; 604)
+[2026-04-27T11:41:32.952+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-04-27T11:41:32.967+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:41:32.970+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

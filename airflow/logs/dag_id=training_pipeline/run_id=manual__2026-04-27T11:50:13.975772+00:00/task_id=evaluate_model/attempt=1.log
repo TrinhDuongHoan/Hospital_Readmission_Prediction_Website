@@ -1,0 +1,43 @@
+[2026-04-27T11:50:22.086+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-27T11:50:22.111+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: training_pipeline.evaluate_model manual__2026-04-27T11:50:13.975772+00:00 [queued]>
+[2026-04-27T11:50:22.118+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: training_pipeline.evaluate_model manual__2026-04-27T11:50:13.975772+00:00 [queued]>
+[2026-04-27T11:50:22.118+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-27T11:50:22.128+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): evaluate_model> on 2026-04-27 11:50:13.975772+00:00
+[2026-04-27T11:50:22.135+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=366) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-27T11:50:22.134+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'training_pipeline', 'evaluate_model', 'manual__2026-04-27T11:50:13.975772+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/training_pipeline_dag.py', '--cfg-path', '/tmp/tmp3hfuujz7']
+[2026-04-27T11:50:22.135+0000] {standard_task_runner.py:63} INFO - Started process 367 to run task
+[2026-04-27T11:50:22.135+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask evaluate_model
+[2026-04-27T11:50:22.173+0000] {task_command.py:426} INFO - Running <TaskInstance: training_pipeline.evaluate_model manual__2026-04-27T11:50:13.975772+00:00 [running]> on host 80036929c971
+[2026-04-27T11:50:22.238+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='training_pipeline' AIRFLOW_CTX_TASK_ID='evaluate_model' AIRFLOW_CTX_EXECUTION_DATE='2026-04-27T11:50:13.975772+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-27T11:50:13.975772+00:00'
+[2026-04-27T11:50:22.239+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-27T11:50:22.249+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-27T11:50:22.250+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project && python -m src.training.evaluate']
+[2026-04-27T11:50:22.257+0000] {subprocess.py:86} INFO - Output:
+[2026-04-27T11:50:23.607+0000] {subprocess.py:93} INFO - /opt/***/project/src/training/preprocess.py:33: DtypeWarning: Columns (10) have mixed types. Specify dtype option on import or set low_memory=False.
+[2026-04-27T11:50:23.608+0000] {subprocess.py:93} INFO -   df = pd.read_csv(file_path, na_values=MISSING_VALUES)
+[2026-04-27T11:50:24.251+0000] {subprocess.py:93} INFO - Metrics:
+[2026-04-27T11:50:24.251+0000] {subprocess.py:93} INFO - accuracy: 0.6254790213225901
+[2026-04-27T11:50:24.251+0000] {subprocess.py:93} INFO - precision: 0.5949407620877362
+[2026-04-27T11:50:24.251+0000] {subprocess.py:93} INFO - recall: 0.5928525845564774
+[2026-04-27T11:50:24.251+0000] {subprocess.py:93} INFO - f1_score: 0.5938948377816845
+[2026-04-27T11:50:24.251+0000] {subprocess.py:93} INFO - roc_auc: 0.6705793814908753
+[2026-04-27T11:50:24.251+0000] {subprocess.py:93} INFO - average_precision: 0.6317628898461791
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO - 
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO - Classification report:
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO -               precision    recall  f1-score   support
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO - 
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO -            0       0.65      0.65      0.65     10952
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO -            1       0.59      0.59      0.59      9402
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO - 
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO -     accuracy                           0.63     20354
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO -    macro avg       0.62      0.62      0.62     20354
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO - weighted avg       0.63      0.63      0.63     20354
+[2026-04-27T11:50:24.252+0000] {subprocess.py:93} INFO - 
+[2026-04-27T11:50:24.253+0000] {subprocess.py:93} INFO - 
+[2026-04-27T11:50:24.253+0000] {subprocess.py:93} INFO - Metrics saved to: artifacts/metrics/logistic_baseline_metrics.json
+[2026-04-27T11:50:24.371+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-27T11:50:24.371+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-27T11:50:24.391+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=training_pipeline, task_id=evaluate_model, run_id=manual__2026-04-27T11:50:13.975772+00:00, execution_date=20260427T115013, start_date=20260427T115022, end_date=20260427T115024
+[2026-04-27T11:50:24.437+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-27T11:50:24.449+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-27T11:50:24.451+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

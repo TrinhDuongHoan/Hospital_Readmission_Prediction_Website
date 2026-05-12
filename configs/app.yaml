@@ -1,0 +1,3 @@
+app_name: diabetes-mlops-streaming
+environment: dev
+debug: true
